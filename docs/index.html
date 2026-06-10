@@ -144,6 +144,8 @@ bash 2.train_model.sh</code></pre>
 <h2 id="9-configuration-notes">9. Configuration Notes</h2>
 <p>The model zoo inherits FuxiCTR-style configuration. When adding new models, keep the preparation, training, extraction, and notebook paths aligned so the analysis notebook can reuse the same embedding layout.</p>
 <h2 id="10-experimental-highlights">10. Experimental Highlights</h2>
+<p><img src="assets/dimensional-collapse-results.png" alt="DNN integration results for dimensional collapse"></p>
+<p>This table from the experiments section reports how parallel and stacked DNNs change AUC and RankMe on FM/CrossNet, making the dimensional-collapse conclusion visible before the shortened takeaway table.</p>
 <p>The paper reports that both parallel and stacked DNN components can mitigate dimensional collapse in embeddings, giving a different explanation for why DNNs help feature interaction models beyond directly learning dot products.</p>
 <table>
 <thead><tr>
@@ -206,7 +208,7 @@ bash 2.train_model.sh</code></pre>
 <h2 id="13-contact">13. Contact</h2>
 <p>For paper questions, please contact:</p>
 <ul>
-<li>First author: Jiancheng Wang.</li>
+<li>First author: Jiancheng Wang (<code>wangjc830@mail.ustc.edu.cn</code>)</li>
 <li>Corresponding authors: Hao Wang (<code>wanghao3@ustc.edu.cn</code>) and Enhong Chen (<code>cheneh@ustc.edu.cn</code>)</li>
 </ul>
 <p>For repository issues, please open a GitHub issue in this repository.</p>

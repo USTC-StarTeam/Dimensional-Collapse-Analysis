@@ -82,6 +82,11 @@ The model zoo inherits FuxiCTR-style configuration. When adding new models, keep
 
 ## 10. Experimental Highlights
 
+![DNN integration results for dimensional collapse](docs/assets/dimensional-collapse-results.png)
+
+This table from the experiments section reports how parallel and stacked DNNs change AUC and RankMe on FM/CrossNet, making the dimensional-collapse conclusion visible before the shortened takeaway table.
+
+
 The paper reports that both parallel and stacked DNN components can mitigate dimensional collapse in embeddings, giving a different explanation for why DNNs help feature interaction models beyond directly learning dot products.
 
 | Backbone | Dataset | Base AUC / RankMe | With DNN | Readout |
@@ -119,7 +124,7 @@ The paper reports that both parallel and stacked DNN components can mitigate dim
 
 For paper questions, please contact:
 
-- First author: Jiancheng Wang.
+- First author: Jiancheng Wang (`wangjc830@mail.ustc.edu.cn`)
 - Corresponding authors: Hao Wang (`wanghao3@ustc.edu.cn`) and Enhong Chen (`cheneh@ustc.edu.cn`)
 
 For repository issues, please open a GitHub issue in this repository.
