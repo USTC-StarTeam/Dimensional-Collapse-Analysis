@@ -84,6 +84,15 @@ The model zoo inherits FuxiCTR-style configuration. When adding new models, keep
 
 The paper reports that both parallel and stacked DNN components can mitigate dimensional collapse in embeddings, giving a different explanation for why DNNs help feature interaction models beyond directly learning dot products.
 
+| Backbone | Dataset | Base AUC / RankMe | With DNN | Readout |
+| --- | --- | --- | --- | --- |
+| FM | Avazu | 0.7848 / 89.12 | +p-DNN: 0.7927 / 166.78; +s-DNN: 0.7893 / 160.57 | Both DNN placements raise AUC and RankMe. |
+| FM | Criteo | 0.8025 / 70.13 | +p-DNN: 0.8137 / 181.56; +s-DNN: 0.8050 / 72.93 | p-DNN increases FM RankMe by about 158%. |
+| CrossNet | Avazu | 0.7885 / 105.18 | +p-DNN: 0.7930 / 163.18; +s-DNN: 0.7934 / 170.02 | DNNs flatten the singular-value spectrum. |
+| CrossNet | Criteo | 0.8118 / 161.84 | +p-DNN: 0.8134 / 169.41; +s-DNN: 0.8138 / 186.59 | Stacked DNN gives the strongest RankMe in this setting. |
+
+**Conclusion:** DNN components help feature-interaction models partly by improving embedding dimensional robustness, not only by adding more nonlinear predictors.
+
 ## 11. Notes For Maintainers
 
 - Keep generated embeddings and large data artifacts outside Git history.

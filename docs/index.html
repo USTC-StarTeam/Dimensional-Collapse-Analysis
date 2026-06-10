@@ -155,6 +155,47 @@ bash 2.train_model.sh</code></pre>
 <p>The model zoo inherits FuxiCTR-style configuration. When adding new models, keep the preparation, training, extraction, and notebook paths aligned so the analysis notebook can reuse the same embedding layout.</p>
 <h2 id="10-experimental-highlights">10. Experimental Highlights</h2>
 <p>The paper reports that both parallel and stacked DNN components can mitigate dimensional collapse in embeddings, giving a different explanation for why DNNs help feature interaction models beyond directly learning dot products.</p>
+<table>
+<thead><tr>
+<th>Backbone</th>
+<th>Dataset</th>
+<th>Base AUC / RankMe</th>
+<th>With DNN</th>
+<th>Readout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FM</td>
+<td>Avazu</td>
+<td>0.7848 / 89.12</td>
+<td>+p-DNN: 0.7927 / 166.78; +s-DNN: 0.7893 / 160.57</td>
+<td>Both DNN placements raise AUC and RankMe.</td>
+</tr>
+<tr>
+<td>FM</td>
+<td>Criteo</td>
+<td>0.8025 / 70.13</td>
+<td>+p-DNN: 0.8137 / 181.56; +s-DNN: 0.8050 / 72.93</td>
+<td>p-DNN increases FM RankMe by about 158%.</td>
+</tr>
+<tr>
+<td>CrossNet</td>
+<td>Avazu</td>
+<td>0.7885 / 105.18</td>
+<td>+p-DNN: 0.7930 / 163.18; +s-DNN: 0.7934 / 170.02</td>
+<td>DNNs flatten the singular-value spectrum.</td>
+</tr>
+<tr>
+<td>CrossNet</td>
+<td>Criteo</td>
+<td>0.8118 / 161.84</td>
+<td>+p-DNN: 0.8134 / 169.41; +s-DNN: 0.8138 / 186.59</td>
+<td>Stacked DNN gives the strongest RankMe in this setting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion:</strong> DNN components help feature-interaction models partly by improving embedding dimensional robustness, not only by adding more nonlinear predictors.</p>
 <h2 id="11-notes-for-maintainers">11. Notes For Maintainers</h2>
 <ul>
 <li>Keep generated embeddings and large data artifacts outside Git history.</li>
