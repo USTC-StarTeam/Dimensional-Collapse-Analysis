@@ -108,4 +108,9 @@ The paper reports that both parallel and stacked DNN components can mitigate dim
 
 ## 13. Contact
 
-For paper questions, contact Hao Wang at `wanghao3@ustc.edu.cn` or Enhong Chen at `cheneh@ustc.edu.cn`. For repository issues, please open a GitHub issue in this repository.
+For paper questions, please contact:
+
+- First author: Jiancheng Wang.
+- Corresponding authors: Hao Wang (`wanghao3@ustc.edu.cn`) and Enhong Chen (`cheneh@ustc.edu.cn`)
+
+For repository issues, please open a GitHub issue in this repository.
